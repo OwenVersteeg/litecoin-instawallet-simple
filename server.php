@@ -36,7 +36,7 @@ if ($isadmin != true) {
             <div style="margin-right: 20px;">
             <h3>Litecoind statistics</h3>
             <table class=\'zebra-striped\'>
-            <tr><td>Server balance total: </td><td>' . $derp ['balance'] . ' DGC</td></tr>
+            <tr><td>Server balance total: </td><td>' . $derp ['balance'] . ' DOGE</td></tr>
             <tr><td>Server wallets created: </td><td>' . $count ['wallets'] . '</td></tr>
             <tr><td>Server block count: </td><td>' . $derp ['blocks'] . '</td></tr>
             <tr><td>Server connections: </td><td>' . $derp ['connections'] . '</td></tr>
@@ -47,7 +47,7 @@ if ($isadmin != true) {
             <tr><td>Server minimun input: </td><td>' . $derp ['mininput'] . '</td></tr>
             <tr><td>Server version: </td><td>' . $derp ['version'] . '</td></tr>
             <tr><td>Donation address: </td><td>' . $btclient->getaccountaddress ( $don_account ) . '</td></tr>
-            <tr><td>Donations recieved: </td><td>' . $btclient->getbalance ( $don_account, 0 ) . ' DGC</td></tr>
+            <tr><td>Donations recieved: </td><td>' . $btclient->getbalance ( $don_account, 0 ) . ' DOGE</td></tr>
             <!--<tr><td>Server errors: </td><td>' . $derp ['errors'] . '</td></tr>-->
             </table>';
 	

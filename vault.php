@@ -32,7 +32,7 @@ if ($_GET ['key']) {
 		if ($_POST ['amount'] && $_POST ['address']) {
 			try {
 				$addr->sanitizedSend ( $_POST ['address'], $ltcaddr, $_GET ['key'], str_replace ( ",", ".", $_POST ['amount'] ) );
-				echo '<div class="alert-message success" data-alert="alert"><a class="close" onclick="\$().alert()" href="#">&times</a><p>Successfully sent ' . $_POST ['amount'] . " DGC to" . $_POST ['address'] . '</p></div>';
+				echo '<div class="alert-message success" data-alert="alert"><a class="close" onclick="\$().alert()" href="#">&times</a><p>Successfully sent ' . $_POST ['amount'] . " DOGE to" . $_POST ['address'] . '</p></div>';
 			} catch ( Exception $erar ) {
 				switch ($erar->getMessage ()) {
 					
@@ -65,10 +65,10 @@ if ($_GET ['key']) {
 		// readonly=readonly
 		// /></h4>";
 		
-		echo "<p><h2>Balance: " . $addr->ltc->getbalance ( $_GET ['key'], 3 ) . "</h2><i style='font-size: 9px; padding-top:0px;margin-top:0px;'>Deposits updated after 3 confirms, 0.1 DGC reserved for fee</i></p>";
-		echo "<h4>Send DGC:</h4>";
+		echo "<p><h2>Balance: " . $addr->ltc->getbalance ( $_GET ['key'], 3 ) . "</h2><i style='font-size: 9px; padding-top:0px;margin-top:0px;'>Deposits updated after 3 confirms, 0.1 DOGE reserved for fee</i></p>";
+		echo "<h4>Send DOGE:</h4>";
 		echo "<form class='form-stacked' action='{$_SERVER['PHP_SELF']}?{$_SERVER['QUERY_STRING']}' method='POST'><label for='address'>Address to send to</label><input type='text' id='address' name='address' style='width: 260px; text-align: center;'/>
-                <br /><label for='amount'>Amount of DGC to send</label><input type='text' id='amount' name='amount' style='width: 180px; text-align: right;' /> &nbsp; <input type='submit' class='btn success'value='SEND'/></form>";
+                <br /><label for='amount'>Amount of DOGE to send</label><input type='text' id='amount' name='amount' style='width: 180px; text-align: right;' /> &nbsp; <input type='submit' class='btn success'value='SEND'/></form>";
 		
 		?><br> <br>
 		<table style="width: 560px;">
