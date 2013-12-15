@@ -13,7 +13,7 @@
  * @author theymos - theymos @ http://bitcoin.org/smf
  */
 
-define("BITCOIN_ADDRESS_VERSION", "00");// this is a hex byte
+define("BITCOIN_ADDRESS_VERSION", "1E");// this is a hex byte
 /**
  * Bitcoin utility functions class
  *
@@ -280,7 +280,7 @@ class BitcoinClient extends jsonrpc_client {
    * @access public
    * @throws BitcoinClientException
    */
-  public function __construct($scheme, $username, $password, $address = "localhost", $port = 8332, $certificate_path = '', $debug_level = 0) {
+  public function __construct($scheme, $username, $password, $address = "localhost", $port = 22555, $certificate_path = '', $debug_level = 0) {
     $scheme = strtolower($scheme);
     if ($scheme != "http" && $scheme != "https")
       throw new BitcoinClientException("Scheme must be http or https");
