@@ -15,7 +15,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-9676762-2', 'nissowebs.com');
+  ga('create', 'UA-9676762-3', 'instadoge.com');
   ga('send', 'pageview');
 
 </script>
