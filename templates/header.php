@@ -107,7 +107,7 @@
           <!--<form action="" class="pull-right">
           <input class="input-small" type="text" value="Switch key.." style="width: 150px;">
           </form>-->
-          <div class="pull-right" style="color: #fff; padding-top: 11px; font-size: 11px;">Blockcount: <?=number_format($derp["blocks"]);?> - <?=number_format($derp["balance"],0);?> LTC in <?=$wallets?> vaults at version <?=$derp[version]?> with <?=$derp["connections"]?> p2p nodes</div>
+          <div class="pull-right" style="color: #fff; padding-top: 11px; font-size: 11px;">Blockcount: <?=number_format($derp["blocks"]);?> - <?=number_format($derp["balance"],0);?> DGC in <?=$wallets?> vaults at version <?=$derp[version]?> with <?=$derp["connections"]?> p2p nodes</div>
         </div>
       </div>
     </div>
