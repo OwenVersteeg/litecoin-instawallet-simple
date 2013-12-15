@@ -65,7 +65,7 @@ if ($_GET ['key']) {
 		// readonly=readonly
 		// /></h4>";
 		
-		echo "<p><h2>Balance: " . $addr->ltc->getbalance ( $_GET ['key'], 5 ) . "</h2><i style='font-size: 9px; padding-top:0px;margin-top:0px;'>Deposits updated after 5 confirms, 0.1 LTC reserved for fee</i></p>";
+		echo "<p><h2>Balance: " . $addr->ltc->getbalance ( $_GET ['key'], 3 ) . "</h2><i style='font-size: 9px; padding-top:0px;margin-top:0px;'>Deposits updated after 3 confirms, 0.1 LTC reserved for fee</i></p>";
 		echo "<h4>Send LTC:</h4>";
 		echo "<form class='form-stacked' action='{$_SERVER['PHP_SELF']}?{$_SERVER['QUERY_STRING']}' method='POST'><label for='address'>Address to send to</label><input type='text' id='address' name='address' style='width: 260px; text-align: center;'/>
                 <br /><label for='amount'>Amount of LTC to send</label><input type='text' id='amount' name='amount' style='width: 180px; text-align: right;' /> &nbsp; <input type='submit' class='btn info'value='SEND'/></form>";
