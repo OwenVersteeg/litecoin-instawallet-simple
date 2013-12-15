@@ -13,7 +13,7 @@ include('templates/header.php');
           <div class="span10">
 
             <?
-            echo srsnot("The Doge InstaaWallet is currently under development, I am not responsible for any lost litecoins, failed transactions, or lost addresses. save your vault link and dont share it");
+            echo srsnot("The Doge InstaaWallet is currently under development, I am not responsible for any lost dogecoins, failed transactions, or lost addresses. save your vault link and dont share it");
 
             if (isset($_SESSION["key"])) {
           ?>
