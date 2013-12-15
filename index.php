@@ -7,13 +7,13 @@ include('templates/header.php');
 
 
         <div class="page-header">
-          <h1>LTC instawallet <small>In progress...</small></h1>
+          <h1>Doge instawallet <small>In progress...</small></h1>
         </div>
         <div class="row">
           <div class="span10">
 
             <?
-            echo srsnot("The LTC InstaaWallet is currently under development, I am not responsible for any lost litecoins, failed transactions, or lost addresses. save your vault link and dont share it");
+            echo srsnot("The Doge InstaaWallet is currently under development, I am not responsible for any lost litecoins, failed transactions, or lost addresses. save your vault link and dont share it");
 
             if (isset($_SESSION["key"])) {
           ?>

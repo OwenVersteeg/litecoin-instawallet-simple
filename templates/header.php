@@ -8,7 +8,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteCoin instaWallet!</title>
+    <title>DogeCoin instaWallet!</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -80,7 +80,7 @@
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="/"><font style="font-size: 20px;">Litecoin Wallet</font><font style="font-size: 9px; "></font> </a>
+          <a class="brand" href="/"><font style="font-size: 20px;">Dogecoin Wallet</font><font style="font-size: 9px; "></font> </a>
           <ul class="nav">
           <?
           // menu          

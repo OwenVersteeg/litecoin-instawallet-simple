@@ -56,7 +56,7 @@ if ($_GET ['key']) {
 		
 		echo srsnot ( "<strong>IMPORTANT!</strong> DO <strong>NOT</strong> LOSE THIS LINK, IT IS LINKED TO YOUR ACCOUNT, IF YOU LOSE THIS LINK, YOU HAVE LOST ACCESS TO YOUR ACCOUNT AND WE WILL NOT BE ABLE TO RETRIEVE IT FOR YOU... <br>
 <br>
-<center><a href=http://wallet.it.cx/vault?key={$_GET['key']} style=\"font-size: 12px;\">http://wallet.it.cx/vault?key={$_GET['key']}</a> (ctrl+b to bookmark)</center>" );
+<center><a href=http://instawallet.net/vault?key={$_GET['key']} style=\"font-size: 12px;\">http://wallet.it.cx/vault?key={$_GET['key']}</a> (ctrl+b to bookmark)</center>" );
 		// echo "<h4>Address:
 		// <input type='text'
 		// value='{$ltcaddr}'
