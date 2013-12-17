@@ -55,22 +55,16 @@ if ($_GET ['key']) {
 		}
 		
 		echo srsnot ( "<strong>IMPORTANT!</strong> DO <strong>NOT</strong> LOSE THIS LINK, IT IS LINKED TO YOUR ACCOUNT, IF YOU LOSE THIS LINK, YOU HAVE LOST ACCESS TO YOUR ACCOUNT AND WE WILL NOT BE ABLE TO RETRIEVE IT FOR YOU... <br>
-<br>
-<center><a href=http://instadoge.net/vault?key={$_GET['key']} style=\"font-size: 12px;\">http://instadoge.net/vault?key={$_GET['key']}</a> (ctrl+b to bookmark)</center>" );
-		// echo "<h4>Address:
-		// <input type='text'
-		// value='{$ltcaddr}'
-		// style='width: 260px;
-		// text-align: center;'
-		// readonly=readonly
-		// /></h4>";
+		<br>
+		<center><a href=http://instadoge.net/vault?key={$_GET['key']} style=\"font-size: 12px;\">http://instadoge.net/vault?key={$_GET['key']}</a> (ctrl+b to bookmark)</center>" );
 		
 		echo "<p><h2>Balance: " . $addr->ltc->getbalance ( $_GET ['key'], 3 ) . "</h2><i style='font-size: 9px; padding-top:0px;margin-top:0px;'>Deposits updated after 3 confirms, 0.1 DOGE reserved for fee</i></p>";
 		echo "<h4>Send DOGE:</h4>";
 		echo "<form class='form-stacked' action='{$_SERVER['PHP_SELF']}?{$_SERVER['QUERY_STRING']}' method='POST'><label for='address'>Address to send to</label><input type='text' id='address' name='address' style='width: 260px; text-align: center;'/>
                 <br /><label for='amount'>Amount of DOGE to send</label><input type='text' id='amount' name='amount' style='width: 180px; text-align: right;' /> &nbsp; <input type='submit' class='btn success'value='SEND'/></form>";
 		
-		?><br> <br>
+		?>
+		<br> <br>
 		<table style="width: 560px;">
 			<thead>
 				<tr>
@@ -125,4 +119,3 @@ if ($_GET ['key']) {
 
 include ("templates/sidebar.php");
 include ('templates/footer.php');
-?>
