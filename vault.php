@@ -18,7 +18,7 @@ include ('templates/header.php');
 <div class="page-header">
 	<h1 align="center">
 		<? echo "{$ltcaddr}"; ?>
-	</h1>
+	</h2>
 </div>
 <div class="row">
 	<div class="span10">
@@ -29,7 +29,7 @@ if ($_GET ['key']) {
 		// sets/updates
 		// session_key with
 		// valid provided ...
-		if ($_POST ['amount'] && $_POST ['address']) {
+		if (isset($_POST ['amount']) && isset($_POST ['address'])) {
 			try {
 				$addr->sanitizedSend ( $_POST ['address'], $ltcaddr, $_GET ['key'], str_replace ( ",", ".", $_POST ['amount'] ) );
 				echo '<div class="alert-message success" data-alert="alert"><a class="close" onclick="\$().alert()" href="#">&times</a><p>Successfully sent ' . $_POST ['amount'] . " DOGE to " . $_POST ['address'] . '</p></div>';

@@ -46,7 +46,7 @@
 		<div class="content">
 		<!-- END HEADER.PHP -->
 		<?php 
-		if ($maintenance == true) {				
+		if ($maintenance == true && !in_array($_SERVER['REMOTE_ADDR'], $adminips)) {			
 			include("./maintenance.php");				
 			include("footer.php");
 			die();
