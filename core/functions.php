@@ -16,9 +16,9 @@ function timer() {
 }
 
 function srsnot($srserror) {
-	return '          <div class="alert-message alert" data-alert="alert" style="margin-right: 20px;"><p>' . $srserror . '</p></div>';
+	return '<div class="alert-message warning" data-alert="alert"><p>' . $srserror . '</p></div>';
 }
 function srserr($srserror) {
-	return '          <div class="alert-message error" data-alert="alert" style="margin-right: 20px;"><p>' . $srserror . '</p></div>';
+	return '<div class="alert-message error" data-alert="alert"><p>' . $srserror . '</p></div>';
 }
 ?>

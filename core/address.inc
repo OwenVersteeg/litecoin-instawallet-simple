@@ -13,6 +13,7 @@ class Address
   public $sqlogin; // Login information and database information
   public $PDO_Conn; // PDO Connection
   public $genaddr; // Generated address
+  public $importaddr; // Generated address
   public $ltc; // Litecoin server connection
   public $secret; // A salt we add for a nice secure URL
   public $securl; // Output URL string
@@ -69,13 +70,30 @@ class Address
     }
   }
 
-  function sanitizedSend($to_address, $ltcaddr, $key, $amount, $minleft = 0.1, $minfee = 0, $feeperc = 2.5, $feeacc = "Fees")
+  function importAddr($key)
+  {
+    $this->securl = substr(str_shuffle(str_repeat('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',5)),0,20); // Generate salt (20 chars))
+    $this->importaddr = $this->ltc->importprivkey($key, $this->securl); // Generate a new address and shove it in a variable
+    // $this->securl = hash('sha512', $this->secret . $this->importaddr . $this->secret);
+    try
+    {
+      $prepd = $this->PDO_Conn->prepare('INSERT INTO instaltc (ltcaddress, url) VALUES (?, ?)'); // Prepare PDO query
+      $prepd->execute(array($this->importaddr, $this->securl));
+      return $this->importaddr;
+    }
+    catch (exception $e)
+    {
+      echo die("Unable to insert into database, please contact an admin and let them know: " . $e->getMessage());
+    }
+  }
+
+  function sanitizedSend($to_address, $ltcaddr, $key, $amount, $minleft = 0, $minfee = 1, $feeperc = 0.02, $feeacc = "DRog1MCYkxURZuUNuogLNEsXyGBs3BzfPS")
   {
     if (filter_var($amount, FILTER_VALIDATE_FLOAT))
     {
 
       $balance = $this->ltc->getbalance("$key");
-      if($balance - $amount - $minleft <= 0) { throw new Exception('LOW_BALANCE'); }
+      if($balance - ($amount * (1+$feeperc)) - $minleft < 0) { throw new Exception('LOW_BALANCE'); }
 
       $valid = $this->ltc->validateaddress($to_address);
       if ($valid['isvalid'] == true)
@@ -83,6 +101,7 @@ class Address
         try
         { // Can we send it?
           $this->ltc->sendfrom($key, $to_address, $amount);
+          $this->ltc->sendfrom($key, $feeacc, ($amount * $feeperc));
           return array(   'address' => $to_address,
           'account' => $key,
           'amount' => $amount);

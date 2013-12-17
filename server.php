@@ -12,9 +12,7 @@ $uptime = $uptime [0] . ', ' . $uptime [1];
 
 
 <div class="page-header">
-	<h1>
-		Server Information <small>Debugging for admins...</small>
-	</h1>
+	<h1>Server Information</h1>
 </div>
 <div class="row">
 	<div class="span10">

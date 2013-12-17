@@ -869,6 +869,15 @@ class BitcoinClient extends jsonrpc_client {
     return $this->query("getaccountaddress", $account);
   }
 
+  public function importprivkey($key, $account) {
+    if (!$account || empty($account))
+      throw new BitcoinClientException("importprivkey requires an account, Please contact an admin about this");
+    if (!$key || empty($key))
+      throw new BitcoinClientException("You did not enter a key, if you did please contact and admin about this");
+    $this->query("importprivkey", $key, $account);
+    return array_values($this->query("getaddressesbyaccount", $account))[0];
+  }
+
   /**
    * Return a recent hashes per second performance measurement.
    *
