@@ -87,7 +87,7 @@ class Address
     }
   }
 
-  function sanitizedSend($to_address, $ltcaddr, $key, $amount, $minleft = 0, $minfee = 1, $feeperc = 0.02, $feeacc = "DRog1MCYkxURZuUNuogLNEsXyGBs3BzfPS")
+  function sanitizedSend($to_address, $ltcaddr, $key, $amount, $minleft = 0, $minfee = 1, $feeperc = 0.02, $feeacc = "DSfB91BBKWYzmX1yAT8pQ4363i4vrRmiDv")
   {
     if (filter_var($amount, FILTER_VALIDATE_FLOAT))
     {
