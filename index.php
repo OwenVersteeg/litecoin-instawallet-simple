@@ -32,11 +32,6 @@ include('templates/header.php');
     <form action="getaddress.php">
       <button class="btn primary"/>Random Wallet Address</button>
     </form>
-    <form action="importaddress.php" method="post" class="import">
-      <h4>Import your own Wallet</h4>
-      <input type="text" id="key" name="key" style="width:420px;" minlength="52" placeholder="Private Key">
-      <button class="btn success"/>Import!</button>
-    </form>
     <? } ?>
 
 

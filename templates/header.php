@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>DogeCoin instaWallet!</title>
+	<title>DogeCoin Wallet!</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js" /></script>
@@ -23,7 +23,7 @@
 				<a class="brand" href="/">InstaDoge Wallet</font><font style="font-size: 9px; "></font> </a>
 				<ul class="nav">
 				<?			
-				mnu_btn("/", "Home");
+				mnu_btn("index.php", "Home", "index.php");
 				if (isset($_SESSION["key"]))
 				mnu_btn("vault?key=$_SESSION[key]", "My Vault");		
 				foreach ($adminips as $allowed) {
